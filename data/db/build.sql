@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS users (
+    UserID BIGINT PRIMARY KEY,
+    UserName TEXT,
+    MessagesAllTime INT DEFAULT 0,
+    GuildID BIGINT DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS rolesIDs (
+    GuildID BIGINT,
+    RoleID BIGINT DEFAULT NULL,
+    MessageId BIGINT DEFAULT NULL,
+    ChannelId BIGINT DEFAULT NULL,
+    EmojiCode TEXT
+);
+
+CREATE TABLE IF NOT EXISTS roomsCreator (
+    GuildID BIGINT,
+    ChannelId BIGINT DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS extraRooms (
+    GuildID BIGINT,
+    MemberID BIGINT,
+    ChannelId BIGINT DEFAULT NULL,
+    ChannelName TEXT
+);
+
+CREATE TABLE IF NOT EXISTS rss (
+    GuildID BIGINT,
+    Link TEXT,
+    ChannelId BIGINT
+)
